@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoSAASmart</title>
+    <style>
+        body {
+            font-style: normal;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image:url("static/images/background");
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; */
+        }
+
+        .heading {
+            text-align: center;
+            margin:0px;
+            font-size: 1.3rem;
+        }
+
+        h2{
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+        
+        h4{
+            margin-top: 10px;
+        }
+        #tag {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-left: 400px;
+            font-size: 1.5rem; 
+        }
+
+        .buttons {
+            padding:100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .button-container {
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+
+        .button-container button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: #4d77a4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button h3 {
+            margin: 0;
+        }
+
+        .button-container button:hover {
+            background-color: #7997b6;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-container {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h2>Welcome to JoSAASmart</h2>
+    </div>    
+    <div id="tag">
+        <h4>-compare and choose wisely</h4>
+    </div>
+    <div class="buttons">
+        <div class="button-container">
+            <button onclick="goToPage1()">
+                <h3>BranchNavigator</h3>
+            </button>
+        </div>
+        <div class="button-container">
+            <button onclick="goToPage2()">
+                <h3>InstituteFinder</h3>
+            </button>
+        </div>
+        <div class="button-container">
+            <button onclick="goToPage3()">
+                <h3>RankTrendsOverYears</h3>
+            </button>
+        </div>
+        <div class="button-container">
+            <button onclick="goToPage4()">
+                <h3>RankTrendsOverRounds</h3>
+            </button>
+        </div>
+        <div class="button-container">
+            <button onclick="goToPage5()">
+                <h3>Rank analysis</h3>
+            </button>
+        </div>
+        <div class="button-container">
+            <button onclick="goToPage6()">
+                <h3>Top10Trends</h3>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        function goToPage1() {
+            window.location.href = "branch_analysis/";
+        }
+
+        function goToPage2() {
+            window.location.href = "Institute_analysis/";
+        }
+
+        function goToPage3() {
+            window.location.href = "trendsoveryears/";
+        }
+        function goToPage4() {
+            window.location.href = "trendsOverRounds/";
+        }
+        function goToPage5() {
+            window.location.href = "rank_input/";
+        }
+        function goToPage6() {
+            window.location.href = "top10Trends/";
+        }
+    </script>
+</body>
+</html>

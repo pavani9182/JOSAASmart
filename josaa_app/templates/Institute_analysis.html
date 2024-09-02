@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoSAASmart</title>
+</head>
+
+
+<style>
+     body {
+        font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        /* background-size: cover; */
+       
+        color:black ;
+        text-align: center;
+
+    }
+
+   
+
+    #filter-form {
+        background-color:whitesmoke ;
+        opacity: 0.8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        color:black;
+    }
+
+    #filter-form label {
+        margin: 10px 0 5px;
+    }
+
+    #filter-form select {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 300px;
+        background-color:whitesmoke;
+        border: 2px solid #4e4848;
+        
+    }
+
+    #filter-form button {
+        padding: 10px 20px;
+        background-color: #7997b6;
+        color: whitesmoke;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+    }
+
+    #filter-form button.enabled {
+        cursor: pointer;
+        background-color: #4d77a4;
+    }
+
+    .cont_2 {
+        width: 90%;
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #4e4848;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        color: rgb(41, 43, 43);
+    }
+
+    th {
+        background-color: #7997b6;
+    }
+</style>
+<body>
+
+     <form id="filter-form" method="get" >
+        {% csrf_token %}
+
+        <label for="Institute">Institute:</label>
+        <select id="Institute" name="Institute">
+            <option value="">Select an option</option>
+            <option value="Indian Institute of Technology Bhubaneswar">Indian Institute of Technology Bhubaneswar</option>
+<option value="Indian Institute of Technology Bombay">Indian Institute of Technology Bombay</option>
+<option value="Indian Institute of Technology Mandi">Indian Institute of Technology Mandi</option>
+<option value="Indian Institute of Technology Delhi">Indian Institute of Technology Delhi</option>
+<option value="Indian Institute of Technology Indore">Indian Institute of Technology Indore</option>
+<option value="Indian Institute of Technology Kharagpur">Indian Institute of Technology Kharagpur</option>
+<option value="Indian Institute of Technology Hyderabad">Indian Institute of Technology Hyderabad</option>
+<option value="Indian Institute of Technology Jodhpur">Indian Institute of Technology Jodhpur</option>
+<option value="Indian Institute of Technology Kanpur">Indian Institute of Technology Kanpur</option>
+<option value="Indian Institute of Technology Madras">Indian Institute of Technology Madras</option>
+<option value="Indian Institute of Technology Gandhinagar">Indian Institute of Technology Gandhinagar</option>
+<option value="Indian Institute of Technology Patna">Indian Institute of Technology Patna</option>
+<option value="Indian Institute of Technology Roorkee">Indian Institute of Technology Roorkee</option>
+<option value="Indian Institute of Technology Ropar">Indian Institute of Technology Ropar</option>
+<option value="Indian Institute of Technology (BHU) Varanasi">Indian Institute of Technology (BHU) Varanasi</option>
+<option value="Indian Institute of Technology Guwahati">Indian Institute of Technology Guwahati</option>
+<option value="Indian Institute of Technology Bhilai">Indian Institute of Technology Bhilai</option>
+<option value="Indian Institute of Technology Goa">Indian Institute of Technology Goa</option>
+<option value="Indian Institute of Technology Palakkad">Indian Institute of Technology Palakkad</option>
+<option value="Indian Institute of Technology Tirupati">Indian Institute of Technology Tirupati</option>
+<option value="Indian Institute of Technology Jammu">Indian Institute of Technology Jammu</option>
+<option value="Indian Institute of Technology Dharwad">Indian Institute of Technology Dharwad</option>
+<option value="Indian Institute of Technology (ISM) Dhanbad">Indian Institute of Technology (ISM) Dhanbad</option>
+
+           
+        </select>
+
+        <label for="Seat_Type">Seat_Type:</label>
+        <select id="Seat_Type" name="Seat_Type">
+            <option value="">Select an option</option>
+            <option value="OPEN">OPEN</option>
+            <option value="OBC-NCL">OBC-NCL</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="EWS">EWS</option>
+            
+
+            
+        </select>
+
+        <label for="Gender">Gender:</label>
+        <select id="Gender" name="Gender">
+            <option value="">Select an option</option>
+            <option value="Gender-Neutral">Gender-Neutral</option>
+            <option value="Female-only (including Supernumerary)">Female-only (including Supernumerary)</option>
+            
+        </select>
+
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+            <option value="">Select an option</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+
+            
+        </select>
+
+        <label for="round">Round:</label>
+        <select id="round" name="round">
+            <option value="">Select an option</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            
+            
+        </select>
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form> 
+      
+
+        <div class="cont_2">
+            {% if In_data %}
+            <!---<h2>Cutoff Analysis Results</h2>-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Institute</th>
+                        <th>Academic Program Name</th>
+                        <th>Seat Type</th>
+                        <th>Gender</th>
+                        <th>Opening Rank</th>
+                        <th>Closing Rank</th>
+                        <th>Year</th>
+                        <th>Round</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in In_data %}
+                    <tr>
+                        <td>{{ data.Institute }}</td>
+                        <td>{{ data.Academic_Program_Name }}</td>
+                        <td>{{ data.Seat_Type }}</td>
+                        <td>{{ data.Gender }}</td>
+                        <td>{{ data.Opening_Rank }}</td>
+                        <td>{{ data.Closing_Rank }}</td>
+                        <td>{{ data.year }}</td>
+                        <td>{{ data.round }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No cutoff data available for the selected options reason might be either the selected
+                branch/reservation(gender or category) not introduced in the selected year</p>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            const selects = document.querySelectorAll('#filter-form select');
+
+            function checkSelects() {
+                let allSelected = true;
+                selects.forEach(select => {
+                    if (select.value === '') {
+                        allSelected = false;
+                    }
+                });
+                if (allSelected) {
+                    submitBtn.classList.add('enabled');
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.classList.remove('enabled');
+                    submitBtn.disabled = true;
+                }
+            }
+
+            selects.forEach(select => {
+                select.addEventListener('change', checkSelects);
+            });
+
+            checkSelects();
+        });
+    </script>
+
+
+</body>
+</html>

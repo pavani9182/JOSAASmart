@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoSAASmart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+
+<style>
+      body {
+        font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        /* background-size: cover; */
+       
+        color:black ;
+        text-align: center;
+
+    }
+
+   
+
+    #filter-form {
+        background-color:whitesmoke ;
+        opacity: 0.8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        color:black;
+    }
+
+    #filter-form label {
+        margin: 10px 0 5px;
+    }
+
+    #filter-form select {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 300px;
+        background-color:whitesmoke;
+        border: 2px solid #4e4848;
+        
+    }
+
+    #filter-form button {
+        padding: 10px 20px;
+        background-color: #7997b6;
+        color: whitesmoke;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+    }
+
+    #filter-form button.enabled {
+        cursor: pointer;
+        background-color: #4d77a4;
+    }
+
+    .cont_2 {
+        width: 90%;
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+
+    
+    .chart-container {
+    width: 70%; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    padding: 20px; /* Add some spacing */
+    }
+
+    .chart {
+    width: 100%; /* Make chart fill container */
+    height: auto; /* Let height adjust based on content */
+    /* Add any additional styling for the chart here */
+    }
+
+    .error-message {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    padding: 20px; /* Add some spacing */
+    background-color: #f2dede; /* Example background color for error message */
+    border: 1px solid #ebccd1; /* Example border color for error message */
+    color: #a94442; /* Example text color for error message */
+    border-radius: 5px; /* Rounded corners */
+    }
+</style>
+<body>
+
+     <form id="filter-form" method="get" >
+        {% csrf_token %}
+
+        <label for="Academic_Program_Name">Academic_Program_Name:</label>
+        <select id="Academic_Program_Name" name="Academic_Program_Name" >
+            <option value="">Select an option</option>
+            <option value="Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))">Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+            <option value="Civil Engineering (4 Years, Bachelor of Technology)">Civil Engineering (4 Years, Bachelor of Technology)</option>
+            <option value="Computer Science and Engineering (4 Years, Bachelor of Technology)">Computer Science and Engineering (4 Years, Bachelor of Technology)</option>
+        </select>
+            
+            
+            
+            <label for="Institute">Institute:</label>
+        <select id="Institute" name="Institute">
+            <option value="">Select an option</option>
+            <option value="Indian Institute of Technology Bhubaneswar">Indian Institute of Technology Bhubaneswar</option>
+            <option value="Indian Institute of Technology Bombay">Indian Institute of Technology Bombay</option>
+            <option value="Indian Institute of Technology Mandi">Indian Institute of Technology Mandi</option>
+            <option value="Indian Institute of Technology Delhi">Indian Institute of Technology Delhi</option>
+            <option value="Indian Institute of Technology Indore">Indian Institute of Technology Indore</option>
+            <option value="Indian Institute of Technology Kharagpur">Indian Institute of Technology Kharagpur</option>
+            <option value="Indian Institute of Technology Hyderabad">Indian Institute of Technology Hyderabad</option>
+            <option value="Indian Institute of Technology Jodhpur">Indian Institute of Technology Jodhpur</option>
+            <option value="Indian Institute of Technology Kanpur">Indian Institute of Technology Kanpur</option>
+            <option value="Indian Institute of Technology Madras">Indian Institute of Technology Madras</option>
+            <option value="Indian Institute of Technology Gandhinagar">Indian Institute of Technology Gandhinagar</option>
+            <option value="Indian Institute of Technology Patna">Indian Institute of Technology Patna</option>
+            <option value="Indian Institute of Technology Roorkee">Indian Institute of Technology Roorkee</option>
+            <option value="Indian Institute of Technology Ropar">Indian Institute of Technology Ropar</option>
+            <option value="Indian Institute of Technology (BHU) Varanasi">Indian Institute of Technology (BHU) Varanasi</option>
+            <option value="Indian Institute of Technology Guwahati">Indian Institute of Technology Guwahati</option>
+            <option value="Indian Institute of Technology Bhilai">Indian Institute of Technology Bhilai</option>
+            <option value="Indian Institute of Technology Goa">Indian Institute of Technology Goa</option>
+            <option value="Indian Institute of Technology Palakkad">Indian Institute of Technology Palakkad</option>
+            <option value="Indian Institute of Technology Tirupati">Indian Institute of Technology Tirupati</option>
+            <option value="Indian Institute of Technology Jammu">Indian Institute of Technology Jammu</option>
+            <option value="Indian Institute of Technology Dharwad">Indian Institute of Technology Dharwad</option>
+            <option value="Indian Institute of Technology (ISM) Dhanbad">Indian Institute of Technology (ISM) Dhanbad</option>
+            
+           
+        </select>
+
+        <label for="Seat_Type">Seat_Type:</label>
+        <select id="Seat_Type" name="Seat_Type">
+            <option value="">Select an option</option>
+            <option value="OPEN">OPEN</option>
+            <option value="OBC-NCL">OBC-NCL</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="EWS">EWS</option>
+            
+
+            
+        </select>
+
+        <label for="Gender">Gender:</label>
+        <select id="Gender" name="Gender">
+            <option value="">Select an option</option>
+            <option value="Gender-Neutral">Gender-Neutral</option>
+            <option value="Female-only (including Supernumerary)">Female-only (including Supernumerary)</option>
+            
+        </select>
+        <label for="Year">Year:</label>
+        <select id="year" name="year">
+            <option value="">Select an option</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            
+        </select>
+    
+
+      
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form> 
+      
+    {% if round_data %}
+    <div class="chart-container">
+        <div id="chart" class="chart">{{ chart|safe }}</div>
+    </div>
+ {% else %}
+    <div class="error-message">
+        <p>No cutoff data available for the selected options. The reason might be that the selected branch/reservation (gender or category) was not introduced in the selected year.</p>
+    </div>
+ {% endif %}
+
+       
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            const selects = document.querySelectorAll('#filter-form select');
+
+            function checkSelects() {
+                let allSelected = true;
+                selects.forEach(select => {
+                    if (select.value === '') {
+                        allSelected = false;
+                    }
+                });
+                if (allSelected) {
+                    submitBtn.classList.add('enabled');
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.classList.remove('enabled');
+                    submitBtn.disabled = true;
+                }
+            }
+
+            selects.forEach(select => {
+                select.addEventListener('change', checkSelects);
+            });
+
+            checkSelects();
+        });
+    </script>
+
+
+</body>
+</html>
