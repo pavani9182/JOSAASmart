@@ -1,4 +1,4 @@
-# JosaaSmart-This README file provides an overview and instructions for the JOSAASmart website project. The website scrapes data from the JOSAA website using the `beautifulsoup`, converts it into a DataFrame using `pandas`, performs data cleaning and exploratory data analysis (EDA), and finally saves the cleaned data into a MySQL database. The project utilizes Django as the backend framework and HTML, CSS, and JavaScript for the frontend. The graphs are generated using Chart.js and Matplotlib.
+# JosaaSmart
 
 ## Table of Contents
 - [Project Overview](#project-overview)
